@@ -27,6 +27,10 @@ export default function HomeScreen() {
 
   const handleServicePress = (id: string) => {
     if (id === 'market') router.push('/marketplace');
+    else if (id === 'ride' || id === 'shared') router.push('/ride-selection');
+    else if (id === 'food') router.push('/restaurant');
+    else if (id === 'courier') router.push('/courier-booking');
+    else if (id === 'swiftcare') router.push('/swiftcare');
     else router.push('/activity');
   };
 
@@ -127,7 +131,7 @@ export default function HomeScreen() {
             </View>
           </View>
 
-          <Pressable style={styles.rideSearchInput} onPress={() => router.push('/rides')}>
+          <Pressable style={styles.rideSearchInput} onPress={() => router.push('/ride-selection')}>
             <Ionicons name="search" size={16} color={SwiftColors.textSecondary} />
             <Text style={styles.rideSearchPlaceholder}>Where are you going today?</Text>
             <View style={styles.rideNowButton}>
@@ -240,7 +244,7 @@ export default function HomeScreen() {
         </View>
 
         <Text style={styles.sectionTitle}>Recommended For You</Text>
-        <Pressable style={[styles.foodCard, SwiftShadow.card]} onPress={() => router.push('/activity')}>
+        <Pressable style={[styles.foodCard, SwiftShadow.card]} onPress={() => router.push('/restaurant')}>
           <LinearGradient colors={['rgba(0,0,0,0)', 'rgba(0,0,0,0.6)']} style={styles.foodImage}>
             <View style={styles.foodEtaPill}>
               <Text style={styles.foodEtaText}>{recommendedRestaurant.eta}</Text>

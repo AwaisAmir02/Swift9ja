@@ -35,7 +35,7 @@ export default function SplashScreen() {
     progress.value = withTiming(0.82, { duration: 2200, easing: Easing.out(Easing.cubic) });
 
     const timeout = setTimeout(() => {
-      router.replace('/login');
+      router.replace('/onboarding');
     }, 2600);
 
     return () => clearTimeout(timeout);

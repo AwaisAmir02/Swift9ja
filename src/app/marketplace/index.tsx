@@ -31,7 +31,8 @@ export default function MarketplaceScreen() {
 
   const handleNavPress = (key: string) => {
     if (key === 'market') return;
-    router.push(`/${key}` as never);
+    if (key === 'rides') router.push('/ride-selection');
+    else router.push(`/${key}` as never);
   };
 
   return (

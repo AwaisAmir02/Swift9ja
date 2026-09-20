@@ -9,15 +9,15 @@ import { BottomNav, type BottomNavItem } from '@/components/swift/bottom-nav';
 type ComingSoonScreenProps = {
   title: string;
   icon: keyof typeof Ionicons.glyphMap;
-  navItems: BottomNavItem[];
-  activeKey: string;
+  navItems?: BottomNavItem[];
+  activeKey?: string;
   activeColor?: string;
 };
 
 export function ComingSoonScreen({ title, icon, navItems, activeKey, activeColor }: ComingSoonScreenProps) {
   return (
     <View style={styles.container}>
-      <SafeAreaView style={styles.safeArea} edges={['top']}>
+      <SafeAreaView style={styles.safeArea} edges={navItems ? ['top'] : ['top', 'bottom']}>
         <View style={styles.content}>
           <View style={styles.iconWrap}>
             <Ionicons name={icon} size={32} color={SwiftColors.emerald} />
@@ -29,17 +29,19 @@ export function ComingSoonScreen({ title, icon, navItems, activeKey, activeColor
           </Pressable>
         </View>
       </SafeAreaView>
-      <BottomNav
-        items={navItems}
-        activeKey={activeKey}
-        activeColor={activeColor}
-        onPress={(key) => {
-          if (key === 'home') router.replace('/home');
-          else if (key === 'market') router.replace('/marketplace');
-          else if (key === 'trips') router.replace('/driver');
-          else if (key !== activeKey) router.replace(`/${key}` as never);
-        }}
-      />
+      {navItems && activeKey ? (
+        <BottomNav
+          items={navItems}
+          activeKey={activeKey}
+          activeColor={activeColor}
+          onPress={(key) => {
+            if (key === 'home') router.replace('/home');
+            else if (key === 'market') router.replace('/marketplace');
+            else if (key === 'trips') router.replace('/driver');
+            else if (key !== activeKey) router.replace(`/${key}` as never);
+          }}
+        />
+      ) : null}
     </View>
   );
 }

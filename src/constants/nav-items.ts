@@ -16,6 +16,14 @@ export const marketplaceNavItems: BottomNavItem[] = [
   { key: 'account', label: 'Account', icon: 'person-circle' },
 ];
 
+export const servicesNavItems: BottomNavItem[] = [
+  { key: 'ride-selection', label: 'Rides', icon: 'car-sport' },
+  { key: 'courier-booking', label: 'Courier', icon: 'cube' },
+  { key: 'swiftcare', label: 'SwiftCare', icon: 'shield-checkmark' },
+  { key: 'wallet', label: 'Wallet', icon: 'wallet' },
+  { key: 'chat-support', label: 'Support', icon: 'headset' },
+];
+
 export const driverNavItems: BottomNavItem[] = [
   { key: 'trips', label: 'Trips', icon: 'navigate' },
   { key: 'driver-earnings', label: 'Earnings', icon: 'wallet' },

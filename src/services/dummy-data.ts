@@ -205,3 +205,667 @@ export const driverQuickActions = [
   { id: 'fuel', label: 'SwiftFuel Hub', icon: 'flame-outline' },
   { id: 'sos', label: 'Driver SOS', icon: 'warning' },
 ];
+
+export const rideRoute = {
+  pickup: 'Maitama',
+  destination: 'Transcorp',
+  pickupFull: 'Maitama District',
+  destinationFull: 'Transcorp Hilton',
+  durationMins: 12,
+  distanceKm: 4.5,
+};
+
+export type RideCategory = {
+  id: string;
+  name: string;
+  tag: string;
+  tagColor: string;
+  tagBg: string;
+  seats: number;
+  description: string;
+  pickupMins: number;
+  price: number;
+  originalPrice?: number;
+  priceNote?: string;
+  iconBg: string;
+  icon: string;
+};
+
+export const rideCategories: RideCategory[] = [
+  {
+    id: 'economy',
+    name: 'Swift Economy',
+    tag: 'Eco',
+    tagColor: '#FFFFFF',
+    tagBg: '#835500',
+    seats: 4,
+    description: 'Affordable everyday ride • AC included',
+    pickupMins: 3,
+    price: 4500,
+    originalPrice: 5400,
+    iconBg: 'rgba(255,221,180,0.5)',
+    icon: 'car-sport',
+  },
+  {
+    id: 'comfort',
+    name: 'Swift Comfort',
+    tag: 'Plus',
+    tagColor: '#FFFFFF',
+    tagBg: '#006D40',
+    seats: 4,
+    description: 'Newer sedans with extra legroom',
+    pickupMins: 5,
+    price: 6500,
+    priceNote: 'Top rated',
+    iconBg: '#ECEEED',
+    icon: 'car',
+  },
+  {
+    id: 'premium',
+    name: 'Swift Premium',
+    tag: 'VIP',
+    tagColor: '#644000',
+    tagBg: '#F5A623',
+    seats: 4,
+    description: 'Executive luxury SUVs & VIP treatment',
+    pickupMins: 7,
+    price: 9500,
+    priceNote: 'Chauffeured',
+    iconBg: '#2E3131',
+    icon: 'car-sport',
+  },
+  {
+    id: 'xl',
+    name: 'Swift XL',
+    tag: '6-Seat',
+    tagColor: '#FFFFFF',
+    tagBg: '#5A605D',
+    seats: 6,
+    description: 'Spacious rides for groups & luggage',
+    pickupMins: 8,
+    price: 8000,
+    priceNote: 'Extra boot',
+    iconBg: '#ECEEED',
+    icon: 'bus',
+  },
+  {
+    id: 'keke',
+    name: 'Swift Keke',
+    tag: 'Fast',
+    tagColor: '#007243',
+    tagBg: '#8AF5B4',
+    seats: 3,
+    description: 'Fast urban intra-city hops & traffic dodging',
+    pickupMins: 2,
+    price: 1800,
+    priceNote: 'Quickest',
+    iconBg: 'rgba(138,245,180,0.5)',
+    icon: 'bicycle',
+  },
+];
+
+export const activeRideTrip = {
+  driverName: 'Emmanuel Okafor',
+  vehicle: 'Silver Toyota Corolla',
+  plate: 'ABC-123XY',
+  rating: 4.94,
+  trips: 2410,
+  safetyPin: '4821',
+  destination: 'Transcorp Hilton',
+  etaMins: 14,
+  remainingKm: 3.8,
+  fare: 4500,
+  walletBalance: 48200,
+  sharingWith: 'Amaka (Wife)',
+};
+
+export const restaurantDetail = {
+  name: 'Kilimanjaro Restaurant',
+  cuisine: 'Nigerian • Grills • Swallows • Naija Delicacies',
+  location: 'Wuse 2, Abuja',
+  status: 'OPEN • FAST KITCHEN',
+  rating: 4.8,
+  ratingsCount: 1840,
+  etaMins: '20-30 min',
+  distanceKm: 2.4,
+  deliveryFee: '₦650 Swift',
+  deliverTo: 'Transcorp Hilton, Maitama',
+  deliverEta: '18-25 mins',
+  promoCode: 'JOLOFFEST',
+  promoDiscount: '20% Off',
+  promoMinOrder: 3000,
+  swiftPoints: 108,
+};
+
+export const menuCategories = [
+  { id: 'popular', label: 'Popular (★)' },
+  { id: 'jollof', label: 'Smoky Jollof & Rice' },
+  { id: 'swallow', label: 'Swallow & Native Soups' },
+  { id: 'grills', label: 'Grills & Suya' },
+  { id: 'sides', label: 'Sides & Small Chops' },
+  { id: 'drinks', label: 'Drinks & Palm Wine' },
+];
+
+export const featuredDish = {
+  id: 'jollof-combo',
+  name: 'Smoky Party Jollof & Grilled Chicken Combo',
+  badge: 'Bestseller',
+  subBadge: 'Smoky Firewood Recipe',
+  description:
+    'Authentic firewood-infused Nigerian party jollof rice served with spiced quarter-leg grilled chicken, sweet golden dodo plantains, and fresh slaw.',
+  price: 4200,
+  originalPrice: 4800,
+  note: 'Customizable Options',
+};
+
+export type MenuItem = {
+  id: string;
+  name: string;
+  description: string;
+  price: number;
+  tag?: { text: string; bg: string; color: string };
+  dotColor?: string;
+};
+
+export const menuItems: MenuItem[] = [
+  {
+    id: 'pounded-yam',
+    name: 'Pounded Yam & Native Egusi Soup',
+    description: 'Smooth pounded yam paired with rich melon-seed Egusi, dry fish, shaki, kpomo, and tender beef.',
+    price: 5500,
+    tag: { text: 'Chef Recommended', bg: '#ECEEED', color: '#F5A623' },
+    dotColor: '#006D40',
+  },
+  {
+    id: 'peppered-beef',
+    name: 'Peppered Beef & Crispy Yam Duo',
+    description: 'Spicy slow-braised beef chunks tossed in scotch bonnet & habanero pepper sauce, with fried yam.',
+    price: 3800,
+    tag: { text: 'Spicy Naija Rub', bg: 'transparent', color: '#5A605D' },
+    dotColor: '#F5A623',
+  },
+  {
+    id: 'grilled-catfish',
+    name: 'Charcoal Grilled Catfish (Point & Kill)',
+    description: 'Basted with secret Kilimanjaro spice rub, served with sweet roasted plantain bole and pepper sauce.',
+    price: 6900,
+    tag: { text: 'Fresh Daily', bg: 'rgba(138,245,180,0.4)', color: '#006D40' },
+    dotColor: '#006D40',
+  },
+  {
+    id: 'dodo',
+    name: 'Sweet Fried Plantain (Dodo Portion)',
+    description: 'Caramelized golden-fried ripe plantain slices, freshly tossed in light sea salt.',
+    price: 1200,
+  },
+];
+
+export const tripRatingData = {
+  driverFirstName: 'Ibrahim',
+  driverName: 'Ibrahim Garba',
+  destination: 'Transcorp Hilton, Maitama',
+  distanceKm: 8.4,
+  durationMins: 22,
+  vehicle: 'Silver Toyota Corolla',
+  plate: 'ABC-782-RSH',
+  rating: 4.9,
+  completedTrips: 1240,
+  positiveTags: ['Polite & Respectful', 'Smooth Driving', 'Clean Car', 'On-time Pickup', 'Great Music'],
+  defaultSelectedTags: ['Polite & Respectful', 'Smooth Driving', 'Clean Car'],
+  complimentNote: 'Ibrahim was very professional and helped with my luggage at Tower B!',
+  fare: 2850,
+  reference: '#SW-RD-9042',
+  breakdown: [
+    { label: 'Base fare', value: 1200 },
+    { label: 'Distance & Time (8.4 km, 22m)', value: 1350 },
+    { label: 'Toll & City Transit Levy', value: 300 },
+    { label: 'SwiftPass Saver Discount', value: -500, accent: true },
+  ],
+  tipOptions: [300, 500, 1000, 2000],
+  defaultTip: 500,
+  swiftPoints: 45,
+  tier: 'Tier Gold',
+};
+
+export const walletDetail = {
+  balance: 125500.0,
+  escrowAmount: 0,
+  verificationTier: 'TIER-3 VERIFIED ACCOUNT',
+  verificationSubtitle: 'BVN Linked • NDIC Insured Partner',
+};
+
+export const subWallets = [
+  {
+    id: 'rewards',
+    name: 'SwiftRewards',
+    badge: 'Tier Gold',
+    badgeColor: '#835500',
+    badgeBg: 'rgba(255,221,180,0.5)',
+    value: '4,850',
+    valueUnit: 'Pts',
+    subtext: 'Value = ₦4,850.00',
+    cta: 'Redeem for Rides',
+  },
+  {
+    id: 'fuel',
+    name: 'SwiftFuel Wallet',
+    badge: 'Active',
+    badgeColor: '#007243',
+    badgeBg: 'rgba(138,245,180,0.5)',
+    value: '15,000',
+    valueUnit: '₦',
+    subtext: 'Accepted at Total & NNPC',
+    cta: 'Top Up Fuel',
+  },
+];
+
+export const fundingAccount = {
+  bank: 'Providus Bank',
+  number: '9920194820',
+};
+
+export const virtualCard = {
+  label: 'SWIFT9JA VIRTUAL CARD',
+  currencyToggle: 'USD | NGN',
+  last4: '8831',
+  cardholder: 'CHUKWUDIE OKOYE',
+  expiry: '08/28',
+};
+
+export const linkedCard = {
+  name: 'GTBank Naira Mastercard',
+  badge: 'Default',
+  detail: 'Mastercard Debit •••• 6920',
+};
+
+export type WalletActivity = {
+  id: string;
+  icon: string;
+  iconBg: string;
+  title: string;
+  subtitle: string;
+  amount: number;
+  action?: string;
+  status?: string;
+  statusColor?: string;
+  statusBg?: string;
+};
+
+export const walletActivity: WalletActivity[] = [
+  {
+    id: 'ride',
+    icon: 'car-sport',
+    iconBg: 'rgba(255,221,180,0.5)',
+    title: 'Ride - Toyota Corolla (ABC-123XY)',
+    subtitle: 'Today • 08:30 AM • Ikeja to VI',
+    amount: -4500,
+    action: 'Receipt',
+  },
+  {
+    id: 'topup',
+    icon: 'checkmark-circle',
+    iconBg: 'rgba(138,245,180,0.5)',
+    title: 'Wallet Top-up via Providus',
+    subtitle: 'Yesterday • Bank Transfer',
+    amount: 50000,
+    status: 'Successful',
+    statusColor: '#007243',
+    statusBg: 'rgba(138,245,180,0.5)',
+  },
+  {
+    id: 'food',
+    icon: 'restaurant',
+    iconBg: 'rgba(255,221,180,0.5)',
+    title: 'Kilimanjaro Jollof & Chicken',
+    subtitle: '24 Oct • SwiftEats Express',
+    amount: -7200,
+    action: 'Details',
+  },
+  {
+    id: 'cashback',
+    icon: 'gift',
+    iconBg: 'rgba(255,221,180,0.5)',
+    title: 'SwiftRewards 5% Cashback',
+    subtitle: '22 Oct • Fuel Purchase Promo',
+    amount: 450,
+    status: 'Earned',
+    statusColor: '#835500',
+    statusBg: '#F5A623',
+  },
+];
+
+export const walletPromoBanner = {
+  label: 'LAGOS RUSH PROMO',
+  title: 'Earn 2x Points on Island Rides',
+  subtitle: 'Book between 4 PM - 7 PM to boost your SwiftRewards.',
+};
+
+export const checkoutOrder = {
+  restaurantName: 'Kilimanjaro',
+  deliveryAddress: {
+    label: 'Transcorp Hilton, Maitama',
+    detail: 'Room 2, Tower B • Aguiyi Ironsi St, Abuja',
+    contact: 'Chinedu O. • +234 803 555 0192',
+    note: 'Leave at concierge desk during arrival',
+  },
+  speedTiers: [
+    { id: 'standard', label: 'Standard', eta: '20-30 mins', price: 0 },
+    { id: 'turbo', label: 'Turbo Drop', eta: '10-15 mins', price: 150, badge: 'Limited' },
+  ],
+  defaultSpeedTier: 'standard',
+  sidePortionQty: 1,
+  promoCode: 'JOLOFFEST20',
+  promoDiscount: 1080,
+  swiftPassDeliverySaved: 650,
+  swiftPointsRedeem: 400,
+  courierTipOptions: [200, 500, 1000],
+  defaultCourierTip: 500,
+  paymentMethod: 'SwiftWallet',
+  walletBalance: 48200,
+  walletTopUp: 500,
+  summary: {
+    itemsSubtotal: 5400,
+    promoDiscount: -1080,
+    packagingLevy: 250,
+    courierTip: 500,
+    totalPayable: 5070,
+  },
+  pointsEarned: 120,
+};
+
+export const foodOrderTracking = {
+  orderId: '#SW-FD-7821',
+  restaurant: 'Kilimanjaro',
+  hub: 'Wuse 2 Hub',
+  etaRange: '14-18 mins',
+  arrivalTime: '2:15 PM',
+  distanceAway: '1.8 km away',
+  trafficNote: 'Light traffic along Maitama Flyover Live',
+  statusStep: 'Approaching Shehu Shagari Way',
+  statusDetail: 'Next turn right towards Maitama Gate 3',
+  statusBadge: 'On Schedule',
+  handoverPin: '8421',
+  rider: {
+    name: 'Ibrahim Garba',
+    rating: 4.9,
+    deliveries: 1240,
+    vehicle: 'Honda 125 • Silver (ABJ-432-KW)',
+  },
+  quickReplies: ["I'm at lobby", 'Please ring bell'],
+  packageItems: [
+    { id: 'combo', name: 'Kilimanjaro Smoky Jollof Combo', detail: 'Quarter leg chicken, Dodo, Spicy sauce', qty: 1, price: 4200 },
+    { id: 'plantain', name: 'Extra Fried Plantain (Dodo Portion)', price: 650 },
+    { id: 'cutlery', name: 'Eco Cutlery, Extra Napkins & Toothpick', price: 0, free: true },
+    { id: 'dispatch', name: 'Express Swift Dispatch & Packaging Fee', price: 220 },
+  ],
+  paymentMethod: 'SwiftWallet',
+  paymentAmount: 5070,
+  dropoff: {
+    name: 'Transcorp Hilton Maitama',
+    address: '1 Aguiyi Ironsi St, Maitama, Abuja 900271',
+    instructions: 'Leave at concierge desk or ring arrival. Room 412, Tower B.',
+  },
+};
+
+export type FleetOption = {
+  id: string;
+  label: string;
+  capacity: string;
+  eta: string;
+  price: number;
+  icon: string;
+};
+
+export const courierFleetOptions: FleetOption[] = [
+  { id: 'bike', label: 'Express Bike', capacity: '<5kg capacity', eta: '~25m', price: 1800, icon: 'bicycle' },
+  { id: 'car', label: 'Car Boot', capacity: '<25kg capacity', eta: '~40m', price: 3200, icon: 'car' },
+  { id: 'van', label: 'Van Cargo', capacity: '<100kg capacity', eta: '~55m', price: 7500, icon: 'bus' },
+];
+
+export const courierBooking = {
+  distanceKm: 8.4,
+  pickup: {
+    location: 'Kilimanjaro Hub, Wuse 2, Abuja',
+    contact: 'Chinedu O. • +234 803 555 0192',
+  },
+  dropoff: {
+    location: 'Transcorp Hilton Lobby, Maitama',
+    contact: 'Emenike K. • +234 807 111 5844',
+  },
+  handlingNote: 'Leave at front reception, call upon arrival',
+  estimatedWeight: '2.3 kg estimated',
+  packageCategories: ['Documents', 'Electronics (Fragile)', 'Clothing', 'Food & Perishables', 'Gifts'],
+  defaultCategory: 'Electronics (Fragile)',
+  weightRange: '0.5kg — 5.0kg',
+  fragileHandling: true,
+  guaranteeInsurance: 350,
+  handoverPinFee: 0,
+  fareBreakdown: {
+    distanceFare: 1800,
+    guaranteeCoverage: 350,
+    memberDiscount: -400,
+    total: 1800,
+  },
+  walletBalance: 48200,
+};
+
+export const swiftcareData = {
+  networkStatus: 'Official Swift9JA Network',
+  breakdownEtaMins: 12,
+  breakdownTitle: 'Stuck on the road?',
+  breakdownSubtitle: 'Rapid rescue patrol units stationed alternated across Abuja expressways and Lagos hubs.',
+  vehicle: {
+    name: '2019 Toyota Corolla',
+    detail: 'Silver • ABC-782-RSH',
+    verified: false,
+  },
+  breakdownPin: 'Shehu Shagari Way',
+  breakdownLocation: 'Near Federal Secretariat Complex, CBD, Abuja',
+  nearbyVans: 4,
+  nearbyRangeKm: 2.7,
+  servicesAvailable: 6,
+  assuranceTitle: 'SwiftCare Assurance Warranty',
+  assuranceSubtitle:
+    '100% Vetted ASE Certified Mechanics • Fixed upfront rates • 30-Day nationwide repair warranty across Nigeria.',
+};
+
+export type SwiftcareService = {
+  id: string;
+  name: string;
+  price: number;
+  description: string;
+  tags: string[];
+  icon: string;
+};
+
+export const swiftcareServices: SwiftcareService[] = [
+  {
+    id: 'tyre',
+    name: 'Flat Tyre & Puncture Repair',
+    price: 2500,
+    description: 'Mobile vulcanizer arrives in ~14 mins with heavy compressor',
+    tags: ['Patch or Space Swap', '+10 Min ETA'],
+    icon: 'disc',
+  },
+  {
+    id: 'battery',
+    name: 'Battery Jumpstart & Diagnostic',
+    price: 4000,
+    description: '12V/24V heavy duty booster pack & alternator test',
+    tags: ['Alternator Test', 'New Battery Option'],
+    icon: 'battery-charging',
+  },
+  {
+    id: 'towing',
+    name: 'Emergency Flatbed Towing',
+    price: 18000,
+    description: 'Zero damage tread, flatbed to certified garage or home',
+    tags: ['Hydraulic Ramp', 'Gift Transit Insured'],
+    icon: 'car',
+  },
+  {
+    id: 'fuel',
+    name: 'Emergency Fuel Delivery',
+    price: 6500,
+    description: '5L/10L certified premium petrol/diesel in sealed safety containers',
+    tags: ['Anti-Spill Pump', 'Fuel Grade Fuel'],
+    icon: 'water',
+  },
+  {
+    id: 'mechanic',
+    name: 'Certified Mobile Mechanic',
+    price: 5000,
+    description: 'On-site engine, brake, and electronic OBD-2 computer diagnostics',
+    tags: ['ASE Certified', 'ECU Scanning'],
+    icon: 'construct',
+  },
+  {
+    id: 'ac',
+    name: 'AC & Overheating Repair',
+    price: 4500,
+    description: 'Radiator coolant top-up, fan belt check & emergency leak seal',
+    tags: ['Coolant Flush', 'Intercooler Seal'],
+    icon: 'snow',
+  },
+];
+
+export const chatSupportData = {
+  agent: { name: 'Adaeze', badge: 'Priority Care' },
+  order: { id: '#SW-FD-7821', context: 'Kilimanjaro Wuse 2' },
+  rider: {
+    name: 'Ibrahim Garba',
+    etaText: '8 mins away',
+    vehicle: 'Honda 125 • Silver (ABJ-432-KW)',
+    pin: '8421',
+  },
+  encryptionNote: 'End-to-end encrypted with Swift Care Concierge',
+  dateLabel: 'Today, 2:04 PM',
+  messages: [
+    {
+      id: 'm1',
+      from: 'agent',
+      time: '2:04 PM',
+      text: "Hello Chinedu! 👋 I can see your Kilimanjaro jollof order #SW-FD-7821 is currently in transit with dispatch rider Ibrahim. How can I assist you today?",
+    },
+    {
+      id: 'm2',
+      from: 'user',
+      time: '2:05 PM',
+      text: 'Hi Adaeze! Can Ibrahim drop the package at Tower B reception directly? I am in an urgent meeting.',
+    },
+    {
+      id: 'm3',
+      from: 'agent',
+      time: '2:06 PM',
+      text: 'Absolutely! I have updated the rider delivery note and Ibrahim has confirmed drop-off at Tower B concierge desk. Your secure 4-digit handover PIN remains 8421.',
+      card: {
+        status: 'Updated',
+        item: 'Kilimanjaro Jollof & Smoked Turkey',
+        dropoff: 'Tower B Reception Desk',
+        riderContact: 'Ibrahim (0803 491 8820)',
+      },
+    },
+  ],
+  quickReplies: ['Thank you, all good! 👍', 'Ask rider to call upon arrival 📞'],
+};
+
+export const accountProfile = {
+  name: 'Chinedu Okafor',
+  phone: '+234 803 555 0192',
+  rating: 4.95,
+  tier: 'Gold',
+  badge: 'SwiftPass Elite',
+  walletBalance: 48200,
+};
+
+export const membershipPerks = [
+  {
+    id: 'savings',
+    name: 'SwiftPass Savings',
+    badge: 'Active',
+    value: '₦12,400',
+    subtitle: 'Saved on trips this month',
+    cta: 'View Benefits',
+  },
+  {
+    id: 'rewards',
+    name: 'SwiftRewards',
+    badge: 'Points',
+    value: '4,850 pts',
+    subtitle: 'Worth ₦4,850 in fare & shop credit',
+    cta: 'Redeem Now',
+  },
+];
+
+export const safetySettings = [
+  {
+    id: 'share-trip',
+    icon: 'people',
+    title: 'Share Live Trip Status',
+    subtitle: 'Auto-share with Naledi O., Omeka K.',
+    enabled: true,
+  },
+  {
+    id: 'audio',
+    icon: 'mic',
+    title: 'Audio Trip Recording',
+    subtitle: 'Encrypted, archives if route deviates',
+    enabled: true,
+  },
+  {
+    id: 'pin',
+    icon: 'keypad',
+    title: '4-Digit Driver Handover PIN',
+    subtitle: 'Driver must verify PIN before starting ride',
+    enabled: true,
+  },
+];
+
+export const accountPreferences = [
+  {
+    id: 'personal',
+    icon: 'person',
+    title: 'Personal Information',
+    subtitle: 'Chinedu Okafor',
+    badge: 'BVN & NIN Verified',
+  },
+  { id: 'places', icon: 'map', title: 'Saved Places', subtitle: 'Home (Maitama) • Work (Wuse 2)' },
+  {
+    id: 'vehicles',
+    icon: 'car',
+    title: 'My Vehicles (SwiftCare)',
+    subtitle: '2019 Toyota Corolla (ABC-782-RSH)',
+    badge: 'Insurance OK',
+  },
+  { id: 'payment', icon: 'card', title: 'Payment Methods', subtitle: 'Previous Virtual Card • Access Bank' },
+  {
+    id: 'corporate',
+    icon: 'briefcase',
+    title: 'Corporate Profile Mode',
+    subtitle: 'Bill rides to Sahara Energy Ltd.',
+    toggle: false,
+  },
+];
+
+export const appSettings = [
+  { id: 'biometric', icon: 'finger-print', title: 'Face ID & Biometric Login', subtitle: 'Instant and secure app unlocking', enabled: true },
+  { id: 'alerts', icon: 'notifications', title: 'Push & SMS Delivery Alerts', subtitle: 'Instant trip arrival & transfer receipts', enabled: true },
+];
+
+export const onboardingSlide = {
+  badge: 'The 3-in-1 Ecosystem',
+  title: 'One App. Endless Possibilities.',
+  subtitle: 'Mobility, food, shopping, vehicles, payments and rewards — all with Swift9JA.',
+  tags: ['₦ Instant Transfers', 'SwiftCare 24/7'],
+  slideIndex: 3,
+  slideTotal: 3,
+  features: [
+    { id: 'mobility', icon: 'car', label: 'Swift Mobility', detail: 'Cars & Keke' },
+    { id: 'food', icon: 'fast-food', label: 'Food & Courier', detail: 'Express Dispatch' },
+    { id: 'wallet', icon: 'card', label: 'SwiftWallet', detail: '₦0 Free Transfers' },
+  ],
+  swiftcareBanner: {
+    title: 'SwiftCare Roadside Rescue',
+    subtitle: '24/7 on-demand vehicle assistance across Nigeria.',
+  },
+};
