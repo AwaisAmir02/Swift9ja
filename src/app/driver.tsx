@@ -101,7 +101,7 @@ export default function DriverScreen() {
           </View>
         </View>
 
-        <View style={styles.dispatchToast}>
+        <Pressable style={styles.dispatchToast} onPress={() => router.push('/driver-incoming-request')}>
           <View style={styles.dispatchToastLeft}>
             <Ionicons name="pulse" size={16} color={SwiftColors.textPrimary} />
             <Text style={styles.dispatchToastText}>High ping rate: {driverStats.pingArea}</Text>
@@ -109,7 +109,7 @@ export default function DriverScreen() {
           <View style={styles.highChancePill}>
             <Text style={styles.highChanceText}>High Chance</Text>
           </View>
-        </View>
+        </Pressable>
 
         <View style={[styles.mapViewport, SwiftShadow.raised]}>
           <View style={[styles.hotspotChip, styles.hotspotTopLeft, SwiftShadow.raised]}>
@@ -220,7 +220,10 @@ export default function DriverScreen() {
           {driverQuickActions.map((action) => {
             const isDanger = action.id === 'sos';
             return (
-              <Pressable key={action.id} style={[styles.quickActionButton, SwiftShadow.card]}>
+              <Pressable
+                key={action.id}
+                style={[styles.quickActionButton, SwiftShadow.card]}
+                onPress={action.id === 'destination' ? () => router.push('/driver-delivery-mode') : undefined}>
                 <View style={[styles.quickActionIconWrap, isDanger && styles.quickActionIconWrapDanger]}>
                   <Ionicons
                     name={action.icon as keyof typeof Ionicons.glyphMap}
